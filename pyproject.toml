@@ -9,6 +9,10 @@ python = "^3.9"
 Django = "^3.2.6"
 django-phonenumber-field = {extras = ["phonenumbers"], version = "^5.2.0"}
 phonenumbers = "^8.12.31"
+redis = "^3.5.3"
+django-celery-beat = "^2.2.1"
+django-celery-results = "^2.2.0"
+celery = "^5.1.2"
 
 [tool.poetry.dev-dependencies]
 
