@@ -8,4 +8,4 @@ def mail(recipient):
     msg     = "Congratulations for your success"  
     to      = recipient 
     res     = send_mail(subject, msg, settings.EMAIL_HOST_USER, [to])
-    return True
+    return res
