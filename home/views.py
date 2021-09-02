@@ -4,7 +4,7 @@ from django.shortcuts import render,redirect,HttpResponse
 
 from home.models import Contact
 # Create your views here.
-
+from home.tasks import contact_mail
 
 class ContactView(View):
     def post(self, request, *args, **kwargs):
@@ -17,6 +17,7 @@ class ContactView(View):
             name=name, email=email, phone=phone, subject=subject, massage=massage
         )
         data.save()
+        contact_mail.delay(email)
        
         return HttpResponse('OK')
 

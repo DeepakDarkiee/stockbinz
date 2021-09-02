@@ -10,8 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from pathlib import Path
 import os
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-wr=!=sjn4t6+dzs%sn*1dso1tb0^4-=x4-t1u6--zl3ju+7@of
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "phonenumber_field",
     "home",
-    'django_celery_beat',
-    'django_celery_results',
+    "django_celery_beat",
+    "django_celery_results",
 ]
 
 MIDDLEWARE = [
@@ -74,8 +74,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "stockbinz.wsgi.application"
 
-PHONENUMBER_DEFAULT_FORMAT="NATIONAL"
-PHONENUMBER_DEFAULT_REGION = 'IN'
+PHONENUMBER_DEFAULT_FORMAT = "NATIONAL"
+PHONENUMBER_DEFAULT_REGION = "IN"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -123,7 +123,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = os.path.join(BASE_DIR,'/static/')
+STATIC_URL = os.path.join(BASE_DIR, "/static/")
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 MEDIA_URL = "/media/"
@@ -135,10 +135,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CELERY_RESULT_BACKEND = "django-db"
 
-EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'nishachouhan232@gmail.com'
-EMAIL_HOST_PASSWORD = 'nisha@1997@'
-
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtpout.secureserver.net"
+# EMAIL_USE_TLS = True
+EMAIL_USE_SSL = True
+# EMAIL_USE_TLS = True
+EMAIL_PORT = 465
+EMAIL_HOST_USER = "support@stockbinz.com"
+EMAIL_HOST_PASSWORD = "support@123"
