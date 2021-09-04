@@ -195,6 +195,17 @@ python-versions = "*"
 celery = ">=5.0,<6.0"
 
 [[package]]
+name = "django-jazzmin"
+version = "2.4.8"
+description = "Drop-in theme for django admin, that utilises AdminLTE 3 & Bootstrap 4 to make yo' admin look jazzy"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+django = ">=2.2"
+
+[[package]]
 name = "django-otto-admin"
 version = "0.1.2"
 description = "Django admin customization app for django-suit providing google analytics widgets in the admin index"
@@ -575,7 +586,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "8416ef3e11675bbc3d695bd4646bc4176858d61f90d5c9e4fc1799e2751e2eae"
+content-hash = "9d337c345e86815ae10af447ac4733151fadf90e1ffbe3f3b573f7f0d8481d12"
 
 [metadata.files]
 amqp = [
@@ -632,6 +643,10 @@ django-celery-beat = [
 django-celery-results = [
     {file = "django_celery_results-2.2.0-py2.py3-none-any.whl", hash = "sha256:d5f83fad9091e52cd6dbb3ca80632153ad14b6cdac4d73258e040f92717237cb"},
     {file = "django_celery_results-2.2.0.tar.gz", hash = "sha256:cc0285090a306f97f1d4b7929ed98af0475bf6db2568976b3387de4fbe812edc"},
+]
+django-jazzmin = [
+    {file = "django-jazzmin-2.4.8.tar.gz", hash = "sha256:355b8ff5939555a7dbecaa364a54bbdbcc20f028605abedd6d9e2b6a4d1532b4"},
+    {file = "django_jazzmin-2.4.8-py3-none-any.whl", hash = "sha256:577b6ef97a51167dac94b12f340a1233b0e5e124c37bce25a7821ba61c22e6b8"},
 ]
 django-otto-admin = [
     {file = "django-otto-admin-0.1.2.tar.gz", hash = "sha256:32b8e7b45ffa2e07bd26eb5864b7389617a78ff1d7675b525e3cf2f0c116385f"},

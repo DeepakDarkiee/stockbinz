@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -143,3 +144,29 @@ EMAIL_USE_SSL = True
 EMAIL_PORT = 465
 EMAIL_HOST_USER = "support@stockbinz.com"
 EMAIL_HOST_PASSWORD = "support@123"
+
+CELERY_BROKER_URL = 'redis://localhost:6379/'
+# CELERY_RESULT_BACKEND =  'amqp://localhost'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_IGNORE_RESULT=True
+CELERY_REDIRECT_STDOUTS_LEVEL=False
+
+#  'send-summary-every-hour': {
+#        'task': 'summary',
+#         # There are 4 ways we can handle time, read further 
+#        'schedule': 5.0,
+#         # If you're using any arguments
+#        'args': ("We don’t need any",),
+#     },
+    # Executes every Friday at 4pm
+     
+CELERY_BEAT_SCHEDULE = {
+    "send-notification-on-every 10 sec``": { 
+         "task": "home.tasks.add", 
+        #  'schedule': crontab(hour=16, day_of_week=5),
+            "schedule": 1.0,
+
+        },          
+}
