@@ -166,7 +166,7 @@ CELERY_BEAT_SCHEDULE = {
     "send-notification-on-every 10 sec``": { 
          "task": "home.tasks.add", 
         #  'schedule': crontab(hour=16, day_of_week=5),
-            "schedule": 1.0,
+            "schedule": 10000.0,
 
         },          
 }
